@@ -24,7 +24,7 @@ const Hero = () => {
             <div key="frontend" className="fade-in">
               <h1 className="headline-small">I'm a</h1>
               <h1 className="headline-large">
-                <span className="highlight">Frontend</span><span className="text-white">Developer</span>
+                <span className="highlight">Full Stack MERN</span><span className="text-white">Developer</span>
               </h1>
             </div>
           ) : (
@@ -32,7 +32,7 @@ const Hero = () => {
               <h1 className="headline-large">
                 I'm <span className="highlight">Waleed Iftikhar</span>
               </h1>
-              <p className="sub-headline">A Freelance Frontend Developer</p>
+              <p className="sub-headline">A Freelance MERN Developer</p>
             </div>
           )}
         </div>

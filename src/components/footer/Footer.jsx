@@ -12,7 +12,7 @@ const Footer = () => {
         
         <div className="footer-column">
           <h4>About</h4>
-          <p>"Frontend Developer specializing in React.js, building fast and responsive web interfaces."</p>
+          <p>"MERN STACK Developer specializing in , building fast and responsive web interfaces."</p>
           
         </div>
 
@@ -33,7 +33,7 @@ const Footer = () => {
             <li><a href="#">→ Web Design</a></li>
             <li><a href="#">→ Web Development</a></li>
             <li><a href="#">→ Ui/Ux Designer</a></li>
-            <li><a href="#">→ Front-end Developer</a></li>
+            <li><a href="#">→ MERN STACK Developer</a></li>
             <li><a href="#">→ Video Editor</a></li>
           </ul>
         </div>

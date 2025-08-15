@@ -5,10 +5,10 @@ import './Skills.css';
 import Count from './Count'; 
 
 const skillsData = [
-  { name: 'HTML', percentage: 80 },
-  { name: 'CSS', percentage: 80 },
+  { name: 'Node.Js', percentage: 80 },
+  { name: 'Java Script', percentage: 75 },
   { name: 'React Js', percentage: 85 },
-  { name: 'Frame Works', percentage: 90 },
+  { name: 'Frame Works', percentage: 80 },
   { name: 'Video Editing', percentage: 80 },
   { name: 'SEO', percentage: 70 },
 ];

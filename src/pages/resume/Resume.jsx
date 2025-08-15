@@ -61,20 +61,19 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
             <div data-aos="fade-left"> 
             <div className="resume-item">
               <span className="item-date">April,2025-June,2015</span>
-              <h3 className="item-title">WEB-DEVELOPMENT  COURSE</h3>
+              <h3 className="item-title">MERN Stack-DEVELOPMENT  COURSE</h3>
               <h4 className="item-subtitle">DEVCASTLE INSTITUTE</h4>
               <p className="item-description">
-Completed a comprehensive Web Development course covering HTML, CSS, JavaScript, and responsive design techniques.              </p>
+"Successfully completed Full-Stack MERN Development course, gaining proficiency in MongoDB, Express.js, React, and Node.js."             </p>
             </div>
             </div>
              <div data-aos="fade-left"> 
             <div className="resume-item">
-              <span className="item-date">-</span>
-              <h3 className="item-title">Wordpress Developer</h3>
-              <h4 className="item-subtitle">///</h4>
+              <span className="item-date">2025</span>
+              <h3 className="item-title">Full Stack MERN Developer</h3>
+              <h4 className="item-subtitle">BuiltinSoft</h4>
               <p className="item-description">
-                A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-              </p>
+"Full-stack MERN developer with hands-on experience in building responsive, scalable web applications using MongoDB, Express.js, React, and Node.js."              </p>
             </div>
             </div>
              <div data-aos="fade-left"> 
