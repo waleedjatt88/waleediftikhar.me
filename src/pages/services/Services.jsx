@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import './Services.css'; 
-import { FaSquareWebAwesomeStroke,FaWebflow,FaSearchengin } from "react-icons/fa6";
-import { SiTmux } from "react-icons/si";
-import { MdDeveloperMode } from "react-icons/md";
+import { FaSquareWebAwesomeStroke,FaWebflow, } from "react-icons/fa6";
+import { FaDatabase } from "react-icons/fa";
+import { SiInstructure,SiGooglecampaignmanager360 } from "react-icons/si";
 
 import { FaPhotoVideo } from 'react-icons/fa';
 
@@ -14,8 +14,8 @@ const servicesData = [
     aosDelay: '0',
   },
   {
-    icon: <SiTmux />,
-    title: 'UI/UX Designer', 
+    icon: <FaDatabase/>,
+    title: 'DATABASE MANAGEMENT', 
     aosDelay: '200',
   },
   {
@@ -24,13 +24,13 @@ const servicesData = [
     aosDelay: '400',
   },
   {
-    icon: < MdDeveloperMode/>,
-    title: 'APP DEVELOPING',
+    icon: <SiInstructure />,
+    title: 'CODEBASE STRUCTURING',
     aosDelay: '0',
   },
   {
-    icon: <FaSearchengin />,
-    title: 'SEO EXPERT',
+    icon: < SiGooglecampaignmanager360/>,
+    title: 'TEAM COLLABORATOR',
     aosDelay: '200',
   },
   {

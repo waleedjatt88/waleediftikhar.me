@@ -79,10 +79,11 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
              <div data-aos="fade-left"> 
             <div className="resume-item">
               <span className="item-date">-</span>
-              <h3 className="item-title">UI/UX Designer</h3>
-              <h4 className="item-subtitle">///</h4>
+              <h3 className="item-title">DEV TOOLS</h3>
+              <h4 className="item-subtitle">Proficient In</h4>
               <p className="item-description">
-                A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+             My-Sql,Postgresql,MongoDB, Git, GitHub, Swagger, Postman, Netlify,Docker
+
               </p>
             </div>
           </div>

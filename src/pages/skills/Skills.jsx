@@ -6,11 +6,11 @@ import Count from './Count';
 
 const skillsData = [
   { name: 'Node.Js', percentage: 80 },
-  { name: 'Java Script', percentage: 75 },
+  { name: 'Java Script', percentage: 65 },
   { name: 'React Js', percentage: 85 },
-  { name: 'Frame Works', percentage: 80 },
-  { name: 'Video Editing', percentage: 80 },
-  { name: 'SEO', percentage: 70 },
+  { name: 'DataBase Management', percentage: 75 },
+  { name: 'Video Editing', percentage: 70 },
+  { name: 'Dev Tools', percentage: 70 },
 ];
 
 const Skills = () => {
