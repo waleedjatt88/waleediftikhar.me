@@ -2,9 +2,8 @@ import React, {useEffect} from 'react';
 import AOS from 'aos';
 import './Projects.css'; 
 
-// ===> Step 1: Library ki zaroori cheezein import karein <===
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css'; // Blur effect ke liye CSS
+import 'react-lazy-load-image-component/src/effects/blur.css'; 
 
 import projImg1 from '../../assets/project-4.jpg';
 import projImg2 from '../../assets/project-5.jpg';
@@ -15,10 +14,10 @@ import projImg6 from '../../assets/project-3.jpg';
 
 const projectsData = [
   { image: projImg1, title: 'Branding & Illustration', category: 'WEB DESIGN' },
-  { image: projImg2, title: 'Creative Portfolio', category: 'UI/UX DESIGN' },
-  { image: projImg3, title: 'Digital Marketing', category: 'SEO' },
-  { image: projImg4, title: 'Mobile App Mockup', category: 'APP DEVELOPMENT' },
-  { image: projImg5, title: 'Video Editing', category: 'RESOURCES' },
+  { image: projImg2, title: 'DataBase Management', category: 'BACKEND DEV' },
+  { image: projImg3, title: 'Custom Websites', category: 'CREATOR' },
+  { image: projImg4, title: 'Ecomerce Websites', category: 'ONLINE STORES' },
+  { image: projImg5, title: 'Amazing Portfolio', category: 'DESIGN' },
   { image: projImg6, title: 'Company Website', category: 'WEB DEVELOPMENT' },
 ];
 
