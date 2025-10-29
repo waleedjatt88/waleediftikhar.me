@@ -2,13 +2,40 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import './Contact.css'; 
 import profileImage from '../../assets/image4.png';
-
 import { FaMapMarkerAlt, FaPhone, FaPaperPlane, FaGlobe } from 'react-icons/fa';
 
 const Contact = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const subject = e.target[2].value;
+    const message = e.target[3].value;
+
+    try {
+      const res = await fetch("https://portfolioapi.vercel.app/api/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("✅ Message sent successfully!");
+        e.target.reset();
+      } else {
+        alert(`❌ Error: ${data.message || "Failed to send message"}`);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("⚠️ Something went wrong. Try again later.");
+    }
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -45,9 +72,10 @@ const Contact = () => {
 
         <div className="contact-form-area">
           <div className="contact-image">
-            <img src={profileImage} alt="image"  loading="laz"/>
+            <img src={profileImage} alt="image" loading="lazy" />
           </div>
-          <form className="form-container" data-aos="fade-left">
+
+          <form className="form-container" data-aos="fade-left" onSubmit={handleSubmit}>
             <input type="text" placeholder="Your Name" required />
             <input type="email" placeholder="Your Email" required />
             <input type="text" placeholder="Subject" />

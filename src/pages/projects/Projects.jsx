@@ -18,7 +18,7 @@ const projectsData = [
     image: projImg2, 
     title: 'Gift-Card Website', 
     category: 'LIVE DEMO',
-    link: 'https://gift-card-app-beta.vercel.app/' 
+    link: 'https://gift-card-app-beta.vercel.app/'
   },
   { image: projImg3, title: 'Custom Websites', category: 'CREATOR' },
   { image: projImg4, title: 'Ecomerce Websites', category: 'ONLINE STORES' },
