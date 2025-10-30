@@ -82,7 +82,7 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
               <h3 className="item-title">DEV TOOLS</h3>
               <h4 className="item-subtitle">Proficient In</h4>
               <p className="item-description">
-             My-Sql,Postgresql,MongoDB, Git, GitHub, Swagger, Postman, Netlify,Docker
+             Postgresql,MongoDB, Git, GitHub, Swagger, Postman, Netlify/Versal,Docker
 
               </p>
             </div>

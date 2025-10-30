@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
-import './Footer.css'; 
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
-// Icons ke liye
-import { FaTwitter, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -12,8 +11,7 @@ const Footer = () => {
         
         <div className="footer-column">
           <h4>About</h4>
-          <p>"MERN STACK Developer specializing in , building fast and responsive web interfaces."</p>
-          
+          <p>"MERN STACK Developer specializing in building fast and responsive web interfaces."</p>
         </div>
 
         <div className="footer-column">
@@ -30,11 +28,11 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Services</h4>
           <ul className="footer-links">
-            <li><a href="#">→ Web Design</a></li>
-            <li><a href="#">→ Web Development</a></li>
-            <li><a href="#">→ Ui/Ux Designer</a></li>
-            <li><a href="#">→ MERN STACK Developer</a></li>
-            <li><a href="#">→ Video Editor</a></li>
+            <li><a href="#services">→ Web Design</a></li>
+            <li><a href="#services">→ Web Development</a></li>
+            <li><a href="#services">→ Ui/Ux Designer</a></li>
+            <li><a href="#services">→ MERN STACK Developer</a></li>
+            <li><a href="#services">→ Video Editor</a></li>
           </ul>
         </div>
 
@@ -43,7 +41,7 @@ const Footer = () => {
           <ul className="footer-contact-info">
             <li>
               <span><FaMapMarkerAlt /></span>
-              <p>Punjab,Pakistan</p>
+              <p>Punjab, Pakistan</p>
             </li>
             <li>
               <span><FaPhone /></span>
@@ -54,27 +52,23 @@ const Footer = () => {
               <p>waleediftikhar188@gmail.com</p>
             </li>
           </ul>
+
           <div className="social-icons">
-            <a href="#"><FaTwitter /></a>
-            <a
-             href="https://www.facebook.com/ch.waleed.98622/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-             <FaFacebookF /></a>
-             
-            <a
-              href="https://www.instagram.com/waleed_jutt_88/" // <== Yahan apne Instagram ka link daalein
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-            <FaInstagram /></a>
+            <a href="https://github.com/waleedjatt88" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://www.facebook.com/ch.waleed.98622/" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://www.instagram.com/waleed_jutt_88/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
           </div>
         </div>
 
       </div>
       <div className="copyright-text">
-        <p>© {new Date().getFullYear()} All rights reserved | This Portfolio is made by Waleed Iftikhar. </p>
+        <p>© {new Date().getFullYear()} All rights reserved | This Portfolio is made by Waleed Iftikhar.</p>
       </div>
     </footer>
   );

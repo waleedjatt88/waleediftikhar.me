@@ -29,6 +29,15 @@
   margin-top: 20px;
   transition: 1.2 ease-in;
 }
+.footer-section .social-icons a svg {
+  font-size: 25px; 
+  transition: transform 0.3s ease; 
+}
+
+.footer-section .social-icons a:hover svg {
+  transform: scale(1.2); 
+}
+
 
 .social-icons a {
   display: inline-flex;

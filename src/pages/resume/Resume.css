@@ -71,6 +71,9 @@
   border-radius: 8px;
   border: 1px solid #2a2a2a;
   transition: all 0.3s ease;
+    height: 100%; 
+ display: flex;
+  flex-direction: column;
 }
 
 .resume-item:hover {
@@ -102,6 +105,9 @@
   color: #aaaaaa;
   margin-bottom: 15px;
   text-transform: uppercase;
+}
+.resume-item .item-description {
+  flex-grow: 1; 
 }
 
 .item-description {
@@ -162,5 +168,15 @@
 
   .item-title {
       font-size: 1.3rem;
+  }
+}
+/* --- Large Screen Card Alignment Fix --- */
+
+/* Yeh media query sirf 993px se bari screens par apply hogi */
+@media (min-width: 993px) {
+  .resume-column {
+    /* Yeh 'magic' property column ko layout se "ghaib" kar deti hai, 
+       aur uske andar ke cards direct grid ke children ban jate hain. */
+    display: contents;
   }
 }
