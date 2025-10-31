@@ -2,12 +2,10 @@ import React, { useEffect } from 'react';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import CustomCursor from './components/CustomCursor.jsx'; 
 import ScrollToHashElement from './components/ScrollToHashElement';
-
 import Hero from './pages/home/Hero';
 import About from './pages/about/About';
 import Resume from './pages/resume/Resume';
