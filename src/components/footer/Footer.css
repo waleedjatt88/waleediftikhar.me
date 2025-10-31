@@ -1,8 +1,21 @@
+
 .footer-section {
   background-color: #000000;
   padding: 80px 0 0;
   color: rgba(255, 255, 255, 0.7);
+   position: relative;
+  overflow: hidden;
 }
+.footer-section #footer-particles {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+}
+.footer-section .container, .footer-section .copyright-text {
+  position: relative;
+  z-index: 1;
+}
+
 
 .footer-grid {
   display: grid;
@@ -10,7 +23,6 @@
   gap: 40px;
   padding-left: 50px;
   padding-right: 50px;
-  
 }
 
 .footer-column h4 {
@@ -18,7 +30,6 @@
   color: #f0ad4e;
   margin-bottom: 25px;
   padding-left: 15px;
-
 }
 
 .footer-column p {
@@ -27,7 +38,7 @@
 
 .social-icons {
   margin-top: 20px;
-  transition: 1.2 ease-in;
+  transition: 1.2s ease-in;
 }
 .footer-section .social-icons a svg {
   font-size: 25px; 
@@ -37,7 +48,6 @@
 .footer-section .social-icons a:hover svg {
   transform: scale(1.2); 
 }
-
 
 .social-icons a {
   display: inline-flex;
@@ -56,9 +66,7 @@
 .social-icons a:hover {
   background-color: #f0ad4e;
   color: white;
-   transform: translateY(-5px) ;
-  
-
+  transform: translateY(-5px);
 }
 
 .footer-links {
@@ -68,7 +76,6 @@
 
 .footer-links li {
   margin-bottom: 10px;
-  
 }
 
 .footer-links a {
@@ -80,13 +87,12 @@
 .footer-links a:hover {
   color: #fff;
   transition: color 0.3s ease;
-box-shadow: 0px 0px 10px rgba(248, 248, 248, 0.7);
+  box-shadow: 0px 0px 10px rgba(248, 248, 248, 0.7);
 }
 
 .footer-contact-info {
   list-style: none;
   padding: 0;
-
 }
 
 .footer-contact-info li {
@@ -94,20 +100,18 @@ box-shadow: 0px 0px 10px rgba(248, 248, 248, 0.7);
   align-items: flex-start;
   margin-bottom: 15px;
   cursor: pointer;
-
 }
 
 .footer-contact-info span {
   width: 20px;
   margin-right: 15px;
-    color: #f0ad4e;
-
+  color: #f0ad4e;
 }
+
 .footer-contact-info li:hover {
   color: #fff;
   transition: color 0.3s ease;
-box-shadow: 0px 0px 10px rgba(248, 248, 248, 0.7);
-  
+  box-shadow: 0px 0px 10px rgba(248, 248, 248, 0.7);
 }
 
 .copyright-text {
@@ -116,6 +120,7 @@ box-shadow: 0px 0px 10px rgba(248, 248, 248, 0.7);
   margin-top: 60px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 @media (max-width: 992px) {
   .contact-info-grid,
   .footer-grid {

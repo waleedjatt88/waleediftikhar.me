@@ -4,9 +4,14 @@ import './Footer.css';
 
 import { FaGithub, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
+import ParticlesBackground from '../ParticlesBackground';
+
 const Footer = () => {
   return (
     <footer className="footer-section">
+
+      <ParticlesBackground id="footer-particles" />
+
       <div className="container footer-grid">
         
         <div className="footer-column">

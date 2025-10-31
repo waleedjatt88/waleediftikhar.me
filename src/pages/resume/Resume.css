@@ -82,6 +82,7 @@
 }
 
 .item-date {
+  width: fit-content; 
   display: inline-block;
   background-color: #f0ad4e;
   color: #000;

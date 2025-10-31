@@ -5,11 +5,22 @@
   font-family: 'Poppins', sans-serif;
   position: relative;
   text-align: center;
+   position: relative;
+  overflow: hidden;
+}
+.skills-section #skills-particles {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+}
+.skills-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .background-text-skills {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 10vw;

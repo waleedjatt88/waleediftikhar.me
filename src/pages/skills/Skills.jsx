@@ -3,6 +3,8 @@ import AOS from 'aos';
 import { useInView } from 'react-intersection-observer';
 import './Skills.css';
 import Count from './Count'; 
+import ParticlesBackground from '../../components/ParticlesBackground';
+
 
 const skillsData = [
   { name: 'Node.Js', percentage: 80 },
@@ -28,6 +30,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills-section">
+      <ParticlesBackground id="skills-particles" />
       <div className="container">
         <span className="background-text-skills">Skills</span>
         

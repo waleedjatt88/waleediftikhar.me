@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './Hero.css';
 
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"; 
+
+import './Hero.css';
 import profileImage1 from '../../assets/image1.png'; 
 import profileImage2 from '../../assets/image2.png'; 
+import ParticlesBackground from '../../components/ParticlesBackground';
 
 const Hero = () => {
+  const [init, setInit] = useState(false);
   const [isFirstView, setIsFirstView] = useState(true);
 
   useEffect(() => {
@@ -14,8 +19,24 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []); 
+
+  if (!init) {
+    return null;
+  }
+
   return (
     <section id='home' className="hero-section">
+       
+        <ParticlesBackground id="hero-particles" />
+
+
       <div className="hero-content">
         <p className="greeting">HELLO!</p>
         

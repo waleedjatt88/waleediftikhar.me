@@ -1,4 +1,3 @@
-
 .hero-section {
   display: flex;
   align-items: center;
@@ -10,6 +9,17 @@
   font-family: 'Poppins', Arial, sans-serif;
   position: relative;
   overflow: hidden;
+}
+
+#hero-particles {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+}
+
+.hero-content, .hero-image, .slider-dots {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -116,7 +126,8 @@
 .slider-dots {
   position: absolute;
   bottom: 50px;
-  left: 8%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
 }
 
@@ -149,51 +160,45 @@
   }
 }
 
-/* ===> RESPONSIVE STYLES (Sirf yeh hissa neeche add karein) <=== */
-
-/* Tablets aur chotay laptops ke liye */
 @media screen and (max-width: 992px) {
   .hero-section {
-    flex-direction: column-reverse; /* Image ko upar aur text ko neeche kar dega */
+    flex-direction: column-reverse; 
     justify-content: center;
     text-align: center;
-    padding: 80px 5%; /* Padding kam kar di */
+    padding: 80px 5%; 
   }
 
   .hero-content {
-    max-width: 100%; /* Ab content poori width le sakta hai */
+    max-width: 100%; 
   }
 
   .hero-image {
-    width: 50%; /* Image ka size thora chota kar diya */
-    margin-bottom: 40px; /* Image aur text ke beech space */
+    width: 50%; 
+    margin-bottom: 40px; 
   }
   
   .button-group {
-    justify-content: center; /* Buttons ko center mein kar diya */
+    justify-content: center; 
     display: flex;
   }
 
   .slider-dots {
-    /* Dots ko center mein kar diya */
     left: 50%;
     transform: translateX(-50%);
     bottom: 30px; 
   }
 
   .headline-small {
-    font-size: 3.5rem; /* Font size kam kar diya */
+    font-size: 3.5rem; 
   }
   .headline-large {
     font-size: 3rem;
   }
 }
 
-
-/* Mobile phones ke liye */
 @media screen and (max-width: 576px) {
   .headline-small {
-    font-size: 2.8rem; /* Font size aur kam kar diya */
+    font-size: 2.8rem; 
   }
 
   .headline-large {
@@ -205,17 +210,17 @@
   }
 
   .button-group {
-    flex-direction: column; /* Buttons ko ek ke neeche ek kar diya */
+    flex-direction: column; 
     align-items: center;
   }
 
   .btn {
-    width: 80%; /* Buttons ko thora bara kar diya */
+    width: 80%; 
     margin-right: 0;
     margin-bottom: 15px;
   }
   
   .hero-image {
-      width: 70%; /* Image ka size adjust kiya */
+      width: 70%; 
   }
 }
