@@ -16,9 +16,15 @@ const About = () => {
 
   return (
     <section id="about" className="about-section" >
-      <div className="about-image-container"data-aos="fade-right">
-        <img src={profileImage} alt="Waleed Iftikhar" loading="laz" />
-      </div>
+      <div className="about-image-container" data-aos="fade-right">
+  <img 
+    src={profileImage} 
+    alt="Waleed Iftikhar" 
+    width="450"  
+    height="500"
+    loading="lazy" 
+  />
+</div>
 
       <div className="about-content-container">
         <span className="background-text">About</span>
