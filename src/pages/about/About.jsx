@@ -44,16 +44,10 @@ const About = () => {
             <span className="detail-value">Waleed Iftikhar</span>
           </div>
           <div className="detail-item">
-            <span className="detail-label">Date of birth:</span>
-            <span className="detail-value">June 13, 2004</span>
           </div>
           <div className="detail-item">
             <span className="detail-label">Address:</span>
-            <span className="detail-value">Rahim Yar Khan, Punjab</span>
-          </div>
-          <div className="detail-item">
-            <span className="detail-label">Zip code:</span>
-            <span className="detail-value">64200</span>
+            <span className="detail-value">Pakistan</span>
           </div>
           <div className="detail-item">
             <span className="detail-label">Email:</span>
@@ -66,7 +60,6 @@ const About = () => {
         </div>
 
         <div className="project-counter"data-aos="fade-up">
-          <span className="project-number">3</span> Project complete
         </div>
         <div data-aos="fade-up">
         <a href={CV_FILE_URL} download className="download-cv-btn">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-import { FaGithub, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope ,FaLinkedinIn} from 'react-icons/fa';
 
 import ParticlesBackground from '../ParticlesBackground';
 
@@ -59,17 +59,20 @@ const Footer = () => {
           </ul>
 
           <div className="social-icons">
-            <a href="https://github.com/waleedjatt88" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-            <a href="https://www.facebook.com/ch.waleed.98622/" target="_blank" rel="noopener noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="https://www.instagram.com/waleed_jutt_88/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram />
-            </a>
-          </div>
-        </div>
+  <a href="https://github.com/waleedjatt88" target="_blank" rel="noopener noreferrer">
+    <FaGithub />
+  </a>
+  <a href="https://www.facebook.com/ch.waleed.98622/" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF />
+  </a>
+  <a href="https://www.instagram.com/waleed_jutt_88/" target="_blank" rel="noopener noreferrer">
+    <FaInstagram />
+  </a>
+  <a href="https://www.linkedin.com/in/waleed-iftikhar-968254324/" target="_blank" rel="noopener noreferrer">
+    <FaLinkedinIn />
+  </a>
+</div>
+</div>
 
       </div>
       <div className="copyright-text">

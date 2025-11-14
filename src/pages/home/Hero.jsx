@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
@@ -45,7 +46,7 @@ const Hero = () => {
             <div key="frontend" className="fade-in">
               <h1 className="headline-small">I'm a</h1>
               <h1 className="headline-large">
-                <span className="highlight">Full Stack MERN</span><span className="text-white">Developer</span>
+                <span className="highlight">Full Stack MERN</span><span className="text-white"> Developer</span>
               </h1>
             </div>
           ) : (
@@ -58,11 +59,18 @@ const Hero = () => {
           )}
         </div>
 
-        <div className="button-group">
-          <button className="btn hire-me-btn">HIRE ME</button>
-          <button className="btn my-works-btn">MY WORKS</button>
-        </div>
-      </div>
+
+
+<div className="button-group">
+    <Link to="/#contact" className="btn hire-me-btn">
+        HIRE ME
+    </Link>
+    
+    <Link to="/#projects" className="btn my-works-btn">
+        MY WORKS
+    </Link>
+</div>
+</div>
       
       <div className="hero-image">
   <img

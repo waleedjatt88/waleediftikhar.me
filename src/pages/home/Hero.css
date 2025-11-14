@@ -88,6 +88,7 @@
   background-color: #f0ad4e;
   color: #000000;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .hire-me-btn:hover {
@@ -101,6 +102,7 @@
   color: #ffffff;
   border: 2px solid #ffffff;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .my-works-btn:hover {
