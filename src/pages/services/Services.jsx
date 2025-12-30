@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import './Services.css'; 
-import { FaSquareWebAwesomeStroke,FaWebflow, } from "react-icons/fa6";
-import { FaDatabase } from "react-icons/fa";
-import { SiInstructure,SiGooglecampaignmanager360 } from "react-icons/si";
-
-import { FaPhotoVideo } from 'react-icons/fa';
+import { FaDatabase, FaNodeJs, FaMobileAlt, FaCode, FaUsers } from "react-icons/fa";
+import { SiInstructure } from "react-icons/si";
 
 const servicesData = [
   {
-    icon: <FaSquareWebAwesomeStroke/>,
-    title: 'WEB DESIGN',
+    icon: <FaMobileAlt />,
+    title: 'RESPONSIVE DESIGN',
     aosDelay: '0',
   },
   {
@@ -19,7 +16,7 @@ const servicesData = [
     aosDelay: '200',
   },
   {
-    icon: < FaWebflow/>,
+    icon: <FaCode />,
     title: 'WEB DEVELOPER',
     aosDelay: '400',
   },
@@ -29,13 +26,13 @@ const servicesData = [
     aosDelay: '0',
   },
   {
-    icon: < SiGooglecampaignmanager360/>,
+    icon: <FaUsers />,
     title: 'TEAM COLLABORATOR',
     aosDelay: '200',
   },
   {
-    icon: <FaPhotoVideo />,
-    title: 'VIDEO EDITING',
+    icon: <FaNodeJs />,
+    title: 'Node.js',
     aosDelay: '400',
   },
 ];

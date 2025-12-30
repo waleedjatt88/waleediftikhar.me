@@ -1,27 +1,20 @@
 import React from 'react';
 import './Hireme.css'; 
 import ctaVideo from '../../assets/bg_1.mp4';
+import ParticlesBackground from '../../components/ParticlesBackground';
 
 const HireMe = () => {
   return (
     <>
       <section className="stats-section">
-        <div className="container stats-grid">
-          <div className="stat-item">
-            <span className="stat-number">3</span>
-            <span className="stat-label">Awards</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">4+</span>
-            <span className="stat-label">Complete Projects</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">4+</span>
-            <span className="stat-label">Happy Customers</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">1+</span>
-            <span className="stat-label">Years of Experinces</span>
+        <ParticlesBackground id="experience-particles" />
+        <div className="container">
+          <div className="globe-container">
+            <div className="globe-ring"></div>
+            <div className="globe-content">
+              <div className="stat-number">1+</div>
+              <div className="stat-label">Years of Experience</div>
+            </div>
           </div>
         </div>
       </section>

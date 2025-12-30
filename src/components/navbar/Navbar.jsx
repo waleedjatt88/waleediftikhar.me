@@ -53,11 +53,6 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/#blog" className="nav-links" onClick={closeMobileMenu}>
-              My Blog
-            </NavLink>
-          </li>
-          <li className="nav-item">
             <NavLink to="/#contact" className="nav-links" onClick={closeMobileMenu}>
               Contact
             </NavLink>

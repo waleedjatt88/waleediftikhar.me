@@ -5,14 +5,16 @@
   font-family: 'Poppins', sans-serif;
   position: relative;
   text-align: center;
-   position: relative;
+  position: relative;
   overflow: hidden;
 }
+
 .skills-section #skills-particles {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   z-index: 0;
 }
+
 .skills-section .container {
   position: relative;
   z-index: 1;
@@ -20,7 +22,7 @@
 
 .background-text-skills {
   position: absolute;
-  top: 30%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 10vw;
@@ -54,69 +56,189 @@
   font-weight: 700;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 8rem;
-  text-align: left;
-}
-
-.skill-item {
+/* Orbital Container */
+.orbital-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
   position: relative;
+  margin-top: 40px;
 }
 
-.skill-info {
-  margin-bottom: 8px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.skill-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.progress-bar-container-modern {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 11px;
-  background-color: #2a2a2a;
-  border-radius: 3px;
-}
-
-.progress-level-modern {
-  height: 100%;
-  background-color: #f0ad4e;
-  border-radius: 3px;
-  position: relative;
-  transition: width 1.8s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.skill-percentage-moving {
+/* Center Icon/Text */
+.orbital-center {
   position: absolute;
-  bottom: 100%; 
-  right: 0;      
-  transform: translateX(50%);
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #f0ad4e 0%, #ff8c42 100%);
+  border-radius: 50%;
+  box-shadow: 0 10px 40px rgba(240, 173, 78, 0.4);
+}
+
+.center-icon {
+  font-size: 3rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.center-text {
+  font-size: 0.9rem;
   font-weight: 600;
   color: #fff;
-  white-space: nowrap;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Orbital Track */
+.orbital-track {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skill Ball Orbit */
+.skill-ball-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(var(--angle));
+}
+
+/* Skill Ball */
+.skill-ball {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(calc(-1 * var(--angle)));
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: counterRotate 20s linear infinite reverse;
+}
+
+@keyframes counterRotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.skill-ball:hover {
+  transform: translateX(-50%) scale(1.2) rotate(calc(-1 * var(--angle)));
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+  z-index: 100;
+  animation-play-state: paused;
+}
+
+.skill-ball-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0 10px;
+  line-height: 1.3;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .orbital-track {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbital-center {
+    width: 90px;
+    height: 90px;
+  }
+
+  .center-icon {
+    font-size: 2rem;
+  }
+
+  .center-text {
+    font-size: 0.75rem;
+  }
+
+  .skill-ball {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skill-ball-name {
+    font-size: 0.7rem;
   }
 
   .skills-section {
     padding: 80px 0;
   }
 
-  .skill-info,
-  .progress-bar-container-modern {
-    width: 100%;
+  .orbital-container {
+    min-height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .orbital-track {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbital-center {
+    width: 70px;
+    height: 70px;
+  }
+
+  .center-icon {
+    font-size: 1.5rem;
+  }
+
+  .center-text {
+    font-size: 0.65rem;
+  }
+
+  .skill-ball {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-ball-name {
+    font-size: 0.65rem;
   }
 }

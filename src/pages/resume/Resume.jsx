@@ -31,7 +31,7 @@ const Resume = () => {
             <div data-aos="fade-right"> 
             <div className="resume-item" >
               <span className="item-date">2022-2026</span>
-              <h3 className="item-title">BACHELOR IN Degree OF IT</h3>
+              <h3 className="item-title">BACHELOR'S DEGREE IN IT</h3>
               <h4 className="item-subtitle">ISLAMIA UNIVERSITY</h4>
               <p className="item-description">
 I hold a Bachelor’s degree in Information Technology from The Islamia University, where I gained strong expertise in modern web technologies and software development.              </p>
@@ -64,7 +64,7 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
               <h3 className="item-title">MERN Stack DEVELOPMENT  COURSE</h3>
               <h4 className="item-subtitle">DEVCASTLE INSTITUTE</h4>
               <p className="item-description">
-"Successfully completed Full Stack MERN Development course, gaining proficiency in Postgresql, Express.js, React, and Node.js."             </p>
+"Successfully completed Full Stack MERN Development course, gaining proficiency in PostgreSQL, Express.js, React, and Node.js."             </p>
             </div>
             </div>
              <div data-aos="fade-left"> 
@@ -73,7 +73,7 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
               <h3 className="item-title">Full Stack MERN Developer</h3>
               <h4 className="item-subtitle">BuiltinSoft</h4>
               <p className="item-description">
-"Full Stack MERN developer with hands on experience in building responsive, scalable web applications using Postgresql, Express.js, React, and Node.js."              </p>
+"Full Stack MERN developer with hands on experience in building responsive, scalable web applications using PostgreSQL, Express.js, React, and Node.js."              </p>
             </div>
             </div>
              <div data-aos="fade-left"> 
@@ -82,7 +82,7 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
               <h3 className="item-title">DEV TOOLS</h3>
               <h4 className="item-subtitle">Proficient In</h4>
               <p className="item-description">
-              Git, GitHub, Swagger, Postman, Netlify/Versal,Docker
+              Git, GitHub, Swagger, Postman, Netlify/Vercel, Docker
 
               </p>
             </div>

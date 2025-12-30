@@ -1,32 +1,93 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import './Projects.css';
-
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-
-import projImg1 from '../../assets/project-4.jpg';
-import projImg2 from '../../assets/project-5.jpg';
-import projImg3 from '../../assets/project-1.jpg';
-import projImg4 from '../../assets/project-2.jpg';
-import projImg5 from '../../assets/project-6.jpg';
-import projImg6 from '../../assets/project-3.jpg';
+import { FaGithub, FaExternalLinkAlt, FaCheckCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { SiReact, SiNodedotjs, SiMongodb, SiExpress, SiPostgresql, SiTypescript } from 'react-icons/si';
 
 const projectsData = [
-  { image: projImg1, title: 'Branding & Illustration', category: 'WEB DESIGN' },
-  { 
-    image: projImg2, 
-    title: 'Gift-Card Website', 
-    category: 'LIVE DEMO',
-    link: 'https://gift-card-app-beta.vercel.app/'
+  {
+    title: 'Courier Delivery Services',
+    description: 'Complete courier management system with real-time tracking, user authentication, admin dashboard, and payment integration.',
+    technologies: ['React', 'Node.js', 'PostgreSQL'],
+    icon: '🚚',
+    features: [
+      'Real-time package tracking',
+      'Agent dashboard management',
+      'Admin management',
+      'Consumer management',
+      'Customer live chat support',
+      'Payment gateway integration',
+    ],
+    category: 'Full Stack',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    githubLink: 'https://github.com/waleedjatt88/Courier-Delivery-Services-Backend-',
+    demoLink: '#',
   },
-  { image: projImg3, title: 'Custom Websites', category: 'CREATOR' },
-  { image: projImg4, title: 'Ecomerce Websites', category: 'ONLINE STORES' },
-  { image: projImg5, title: 'Amazing Portfolio', category: 'DESIGN' },
-  { image: projImg6, title: 'Company Website', category: 'WEB DEVELOPMENT' },
+  {
+    title: 'Blood Management System',
+    description: 'Blood donation and inventory management platform with donor registration, request system, and emergency alerts.',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'TypeScript'],
+    icon: '🩸',
+    features: [
+      'Donor registration & management',
+      'Blood inventory tracking',
+      'Emergency alert system',
+      'Request & donation history',
+    ],
+    category: 'Full Stack',
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    githubLink: 'https://github.com/waleedjatt88/backend-blood-managment',
+    demoLink: '#',
+  },
+  {
+    title: 'Programming Speed',
+    description: 'RESTful API for competitive programming challenges with user management, problem sets, submission system, and leaderboard.',
+    technologies: ['Node.js', 'Express', 'MongoDB'],
+    icon: '⚡',
+    features: [
+      'RESTful API architecture',
+      'Problem sets management',
+      'Code submission system',
+      'Real-time leaderboard',
+    ],
+    category: 'Backend Only',
+    gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    githubLink: 'https://github.com/waleedjatt88',
+    demoLink: '#',
+  },
+  {
+    title: 'E-Commerce Platform',
+    description: 'Modern online shopping platform with product catalog, shopping cart, user authentication, and Stripe payment processing.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    icon: '🛒',
+    features: [
+      'Product catalog & search',
+      'Shopping cart functionality',
+      'Stripe payment integration',
+      'Order tracking & history',
+    ],
+    category: 'Full Stack',
+    gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    githubLink: 'https://github.com/waleedjatt88',
+    demoLink: '#',
+  },
 ];
 
+const getTechIcon = (tech) => {
+  const icons = {
+    'React': <SiReact />,
+    'Node.js': <SiNodedotjs />,
+    'MongoDB': <SiMongodb />,
+    'Express': <SiExpress />,
+    'PostgreSQL': <SiPostgresql />,
+    'TypeScript': <SiTypescript />,
+  };
+  return icons[tech] || null;
+};
+
 const Projects = () => {
+  const [expandedFeatures, setExpandedFeatures] = useState({});
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -34,69 +95,95 @@ const Projects = () => {
     });
   }, []);
 
+  const toggleFeatures = (index) => {
+    setExpandedFeatures(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-
         <span className="background-text-projects">Projects</span>
 
         <div className="section-header-projects" data-aos="fade-up">
           <h2><span id='ourspan'>Our</span> Projects</h2>
           <p>
-            "Driven by passion and purpose, I’m constantly learning, creating, and pushing boundaries to turn ideas into impactful digital experiences".
+            "Driven by passion and purpose, I'm constantly learning, creating, and pushing boundaries to turn ideas into impactful digital experiences".
           </p>
         </div>
 
-        <div className="projects-grid" data-aos="fade-up">
+        <div className="projects-grid">
           {projectsData.map((project, index) => (
-            <div className="project-card" key={index}>
-              {project.link ? (
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  style={{ display: 'block' }}
+            <div 
+              className="project-card" 
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div className="project-image" style={{ background: project.gradient }}>
+                <div className="project-icon">{project.icon}</div>
+                <div className="project-category-badge">{project.category}</div>
+              </div>
+              
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                
+                {/* Toggle Features Button */}
+                <button 
+                  className="toggle-features-btn"
+                  onClick={() => toggleFeatures(index)}
                 >
-                  <LazyLoadImage
-                    alt={project.title}
-                    src={project.image}
-                    effect="blur"
-                    height="100%"
-                    width="100%"
-                    wrapperClassName="lazy-image-wrapper"
-                  />
-                  <div className="project-overlay">
-                    <div className="overlay-text">
-                      <h3>{project.title}</h3>
-                      <span>{project.category}</span>
+                  {expandedFeatures[index] ? (
+                    <>
+                      <FaChevronUp /> Hide Features
+                    </>
+                  ) : (
+                    <>
+                      <FaChevronDown /> View Features
+                    </>
+                  )}
+                </button>
+
+                {/* Features (Expandable) */}
+                <div className={`project-features ${expandedFeatures[index] ? 'expanded' : 'collapsed'}`}>
+                  {project.features.map((feature, idx) => (
+                    <div key={idx} className="feature-item">
+                      <FaCheckCircle className="feature-icon" />
+                      <span>{feature}</span>
                     </div>
-                  </div>
-                </a>
-              ) : (
-                <>
-                  <LazyLoadImage
-                    alt={project.title}
-                    src={project.image}
-                    effect="blur"
-                    height="100%"
-                    width="100%"
-                    wrapperClassName="lazy-image-wrapper"
-                  />
-                  <div className="project-overlay">
-                    <div className="overlay-text">
-                      <h3>{project.title}</h3>
-                      <span>{project.category}</span>
-                    </div>
-                  </div>
-                </>
-              )}
+                  ))}
+                </div>
+                
+                <div className="tech-stack">
+                  {project.technologies.map((tech, idx) => (
+                    <span key={idx} className="tech-badge">
+                      {getTechIcon(tech)}
+                      <span>{tech}</span>
+                    </span>
+                  ))}
+                </div>
+
+                <div className="project-buttons">
+                  <a 
+                    href={project.githubLink} 
+                    className="project-btn github-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
 };
 
 export default Projects;
+

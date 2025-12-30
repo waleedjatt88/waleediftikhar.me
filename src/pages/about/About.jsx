@@ -33,9 +33,10 @@ const About = () => {
           <span id='aboutspan'>About</span> Me</h2>
         
         <p className="about-description"data-aos="fade-left">
-          I'm a creative and detail-focused Frontend Developer, passionate about
-          crafting responsive and engaging user interfaces. I love bringing designs to
-          life with clean code and modern web technologies.
+          I'm a passionate MERN Stack Developer focused on creating seamless digital 
+experiences. From concept to deployment, I build scalable applications that 
+combine elegant design with robust functionality, always prioritizing 
+performance and user satisfaction.
         </p>
 
         <div className="personal-details"data-aos="fade-left">

@@ -101,13 +101,6 @@ const Contact = () => {
             <h3 className="info-title">EMAIL ADDRESS</h3>
             <p>waleediftikhar188@gmail.com</p>
           </div>
-          <div className="info-item">
-            <div className="info-icon">
-              <FaGlobe />
-            </div>
-            <h3 className="info-title">WEBSITE</h3>
-            <p>yoursite.com</p>
-          </div>
         </div>
 
         <div className="contact-form-area">
