@@ -5,14 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Enable minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.logs in production
-        drop_debugger: true,
-      },
-    },
+    // Enable minification with esbuild (default, faster than terser)
+    minify: 'esbuild',
     // Optimize chunk size
     rollupOptions: {
       output: {
