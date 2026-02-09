@@ -12,7 +12,7 @@ const About = () => {
       once: true,    
     });
   }, []);
-  const CV_FILE_URL = '\Waleed Iftikhar -CV.pdf';
+  const CV_FILE_URL = '/waleed-iftikhar.pdf';
 
   return (
     <section id="about" className="about-section" >
