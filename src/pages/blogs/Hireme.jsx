@@ -12,7 +12,7 @@ const HireMe = () => {
           <div className="globe-container">
             <div className="globe-ring"></div>
             <div className="globe-content">
-              <div className="stat-number">1+</div>
+              <div className="stat-number">2+</div>
               <div className="stat-label">Years of Experience</div>
             </div>
           </div>
