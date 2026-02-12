@@ -1,22 +1,24 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Ye line sabse zaroori hai GitHub Pages ke liye
+  base: "/",
   plugins: [react()],
   build: {
     // Enable minification with esbuild (default, faster than terser)
-    minify: 'esbuild',
+    minify: "esbuild",
     // Optimize chunk size
     rollupOptions: {
       output: {
         manualChunks: {
           // Vendor chunk for react libraries
-          'react-vendor': ['react', 'react-dom'],
+          "react-vendor": ["react", "react-dom"],
           // Icons chunk
-          'icons': ['react-icons/fa', 'react-icons/si'],
+          icons: ["react-icons/fa", "react-icons/si"],
           // Animation libraries
-          'animations': ['aos', 'gsap'],
+          animations: ["aos", "gsap"],
         },
       },
     },
@@ -27,6 +29,6 @@ export default defineConfig({
   },
   // Optimize deps
   optimizeDeps: {
-    include: ['react', 'react-dom', 'aos'],
+    include: ["react", "react-dom", "aos"],
   },
-})
+});
