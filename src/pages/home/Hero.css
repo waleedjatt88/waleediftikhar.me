@@ -113,16 +113,26 @@
 }
 
 .hero-image {
+  position: relative;
   flex-shrink: 0;
   width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 460px;
+  aspect-ratio: 816 / 1224;
 }
 
-.hero-image img {
-  max-width: 100%;
-  height: auto;
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hero-photo.is-active {
+  opacity: 1;
 }
 
 .slider-dots {
@@ -175,8 +185,9 @@
   }
 
   .hero-image {
-    width: 50%; 
-    margin-bottom: 40px; 
+    width: 50%;
+    max-width: 320px;
+    margin: 0 auto 40px;
   }
   
   .button-group {
@@ -223,6 +234,7 @@
   }
   
   .hero-image {
-      width: 70%; 
+      width: 70%;
+      max-width: 260px;
   }
 }

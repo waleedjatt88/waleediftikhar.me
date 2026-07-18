@@ -73,17 +73,21 @@ const Hero = () => {
 </div>
       
       <div className="hero-image">
-  <img
-    key={isFirstView ? 'image1' : 'image2'}
-    src={isFirstView ? profileImage1 : profileImage2}
-    alt="Waleed Iftikhar"
-    className="fade-in"
-    loading="lazy"
-    
-    width="500"
-    height="500" 
-  />
-</div>
+        <img
+          src={profileImage1}
+          alt="Waleed Iftikhar"
+          className={`hero-photo ${isFirstView ? 'is-active' : ''}`}
+          width="500"
+          height="500"
+        />
+        <img
+          src={profileImage2}
+          alt="Waleed Iftikhar"
+          className={`hero-photo ${!isFirstView ? 'is-active' : ''}`}
+          width="500"
+          height="500"
+        />
+      </div>
 
       <div className="slider-dots">
         <span className={`dot ${isFirstView ? 'active' : ''}`}></span>
