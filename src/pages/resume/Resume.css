@@ -14,15 +14,15 @@
   position: relative;
 }
 #resumespan {
-  color: #f0ad4e; 
-    font-weight: 700;
+  color: #f0ad4e;
+  font-weight: 700;
 }
 
 .background-text-resume {
   position: absolute;
   top: -25px;
-  left: 25%; 
-  font-size: 9rem; 
+  left: 25%;
+  font-size: 9rem;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.05);
   z-index: 0;
@@ -53,16 +53,78 @@
 .resume-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  text-align: left; 
+  gap: 50px;
+  text-align: left;
   position: relative;
   z-index: 1;
 }
 
-.resume-column {
+.resume-track {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+}
+
+.track-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.track-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(240, 173, 78, 0.12);
+  color: #f0ad4e;
+  font-size: 1.15rem;
+}
+
+.track-heading h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(240, 173, 78, 0.85) 0%, rgba(240, 173, 78, 0.05) 100%);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 26px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f0ad4e;
+  box-shadow: 0 0 0 4px rgba(240, 173, 78, 0.15);
+  z-index: 1;
 }
 
 .resume-item {
@@ -72,7 +134,6 @@
   border: 1px solid #2a2a2a;
   border-left: 3px solid rgba(240, 173, 78, 0.6);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%; 
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -99,12 +160,12 @@
 .resume-item:hover {
   transform: translateY(-10px);
   border-left-color: #f0ad4e;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
               0 0 15px rgba(240, 173, 78, 0.15);
 }
 
 .item-date {
-  width: fit-content; 
+  width: fit-content;
   display: inline-block;
   background-color: #f0ad4e;
   color: #000;
@@ -130,9 +191,6 @@
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-.resume-item .item-description {
-  flex-grow: 1; 
-}
 
 .item-description {
   font-size: 0.95rem;
@@ -140,36 +198,89 @@
   color: #cccccc;
 }
 
-.download-button-container {
-    margin-top: 60px;
-    position: relative;
-    z-index: 1;
+.resume-tools {
+  margin-top: 64px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-.download-cv-btn-resume {
-  background-color: #f0ad4e;
-  color: #000;
+.tools-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999999;
+  margin-bottom: 22px;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tool-pill {
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.tool-pill:hover {
+  border-color: rgba(240, 173, 78, 0.5);
+  background: rgba(240, 173, 78, 0.12);
+  color: #f0ad4e;
+  transform: translateY(-3px);
+}
+
+.download-button-container {
+  margin-top: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.whatsapp-line {
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin-bottom: 18px;
+}
+
+.whatsapp-btn-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25d366;
+  color: #06210f;
   padding: 14px 35px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
   transition: all 0.3s ease;
-  display: inline-block;
   cursor: pointer;
 }
 
-.download-cv-btn-resume:hover {
-  background-color: #ffffff;
-  transform: translateY(-8px);
-  box-shadow: 0 0 0px #fff, 0 0 10px #fff, 0 0 10px #fff;
-
+.whatsapp-btn-resume svg {
+  font-size: 1.2rem;
 }
 
+.whatsapp-btn-resume:hover {
+  background-color: #1ebe5c;
+  color: #ffffff;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(37, 211, 102, 0.6);
+}
 
 @media screen and (max-width: 992px) {
   .resume-grid {
     grid-template-columns: 1fr;
+    gap: 56px;
   }
 }
 
@@ -185,22 +296,20 @@
   .background-text-resume {
     font-size: 25vw;
   }
-  
+
   .resume-item {
-      padding: 25px;
+    padding: 25px;
   }
 
   .item-title {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
   }
-}
-/* --- Large Screen Card Alignment Fix --- */
 
-/* Yeh media query sirf 993px se bari screens par apply hogi */
-@media (min-width: 993px) {
-  .resume-column {
-    /* Yeh 'magic' property column ko layout se "ghaib" kar deti hai, 
-       aur uske andar ke cards direct grid ke children ban jate hain. */
-    display: contents;
+  .timeline {
+    padding-left: 26px;
+  }
+
+  .timeline-dot {
+    left: -26px;
   }
 }
