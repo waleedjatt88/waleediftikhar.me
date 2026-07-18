@@ -79,27 +79,27 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="contact-info-grid" data-aos="fade-up">
-          <div className="info-item">
+        <div className="contact-info-grid">
+          <div className="info-item" data-aos="fade-up" data-aos-delay="0">
             <div className="info-icon">
               <FaMapMarkerAlt />
             </div>
             <h3 className="info-title">ADDRESS</h3>
             <p>Punjab, Pakistan</p>
           </div>
-          <div className="info-item">
+          <div className="info-item" data-aos="fade-up" data-aos-delay="120">
             <div className="info-icon">
               <FaPhone />
             </div>
             <h3 className="info-title">CONTACT NUMBER</h3>
-            <p>0303-0834088</p>
+            <a href="tel:+923030834088" className="info-value-link">0303-0834088</a>
           </div>
-          <div className="info-item">
+          <div className="info-item" data-aos="fade-up" data-aos-delay="240">
             <div className="info-icon">
               <FaPaperPlane />
             </div>
             <h3 className="info-title">EMAIL ADDRESS</h3>
-            <p>waleediftikhar188@gmail.com</p>
+            <a href="mailto:waleediftikhar188@gmail.com" className="info-value-link">waleediftikhar188@gmail.com</a>
           </div>
         </div>
 
