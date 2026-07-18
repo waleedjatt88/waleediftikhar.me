@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import './Resume.css';
 import { FaGraduationCap, FaBriefcase, FaWhatsapp } from 'react-icons/fa';
+import { SiGit, SiGithub, SiSwagger, SiPostman, SiNetlify, SiVercel, SiDocker } from 'react-icons/si';
 
 const educationItems = [
   {
@@ -44,7 +45,14 @@ const experienceItems = [
   },
 ];
 
-const tools = ['Git', 'GitHub', 'Swagger', 'Postman', 'Netlify/Vercel', 'Docker'];
+const tools = [
+  { name: 'Git', icons: [SiGit] },
+  { name: 'GitHub', icons: [SiGithub] },
+  { name: 'Swagger', icons: [SiSwagger] },
+  { name: 'Postman', icons: [SiPostman] },
+  { name: 'Netlify/Vercel', icons: [SiNetlify, SiVercel] },
+  { name: 'Docker', icons: [SiDocker] },
+];
 
 const TimelineItem = ({ item, aos, delay }) => (
   <div className="timeline-item" data-aos={aos} data-aos-delay={delay}>
@@ -110,12 +118,17 @@ const Resume = () => {
           <div className="tools-list">
             {tools.map((tool, index) => (
               <span
-                key={tool}
+                key={tool.name}
                 className="tool-pill"
                 data-aos="zoom-in"
                 data-aos-delay={index * 60}
               >
-                {tool}
+                <span className="tool-icons">
+                  {tool.icons.map((Icon, i) => (
+                    <Icon key={i} />
+                  ))}
+                </span>
+                {tool.name}
               </span>
             ))}
           </div>

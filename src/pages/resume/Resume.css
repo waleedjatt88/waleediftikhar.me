@@ -222,6 +222,9 @@
 }
 
 .tool-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px 22px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -232,11 +235,24 @@
   transition: all 0.3s ease;
 }
 
+.tool-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  color: #f0ad4e;
+  transition: transform 0.4s ease;
+}
+
 .tool-pill:hover {
   border-color: rgba(240, 173, 78, 0.5);
   background: rgba(240, 173, 78, 0.12);
   color: #f0ad4e;
   transform: translateY(-3px);
+}
+
+.tool-pill:hover .tool-icons {
+  transform: rotate(360deg);
 }
 
 .download-button-container {
