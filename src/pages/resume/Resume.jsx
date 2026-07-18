@@ -60,7 +60,7 @@ Successfully completed a Course Microsoft Office Applications, gaining hands-on 
           <div className="resume-column">
             <div data-aos="fade-left"> 
             <div className="resume-item">
-              <span className="item-date">April,2025-June,2015</span>
+              <span className="item-date">April 2025 - June 2025</span>
               <h3 className="item-title">MERN Stack DEVELOPMENT  COURSE</h3>
               <h4 className="item-subtitle">DEVCASTLE INSTITUTE</h4>
               <p className="item-description">

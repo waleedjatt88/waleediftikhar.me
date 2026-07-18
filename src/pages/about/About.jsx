@@ -12,7 +12,6 @@ const About = () => {
       once: true,    
     });
   }, []);
-  const CV_FILE_URL = '/waleed-iftikhar.pdf';
 
   return (
     <section id="about" className="about-section" >
@@ -62,11 +61,6 @@ performance and user satisfaction.
 
         <div className="project-counter"data-aos="fade-up">
         </div>
-        <div data-aos="fade-up">
-        <a href={CV_FILE_URL} download className="download-cv-btn">
-          DOWNLOAD CV
-        </a>
-      </div>
       </div>
     </section>
   );
