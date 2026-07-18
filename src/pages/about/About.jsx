@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import './About.css';
-import { FaUser, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { FaUser, FaBriefcase, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 import profileImage from '../../assets/image1.png';
 
@@ -56,24 +56,31 @@ const About = () => {
             </div>
           </div>
           <div className="detail-item" data-aos="fade-up" data-aos-delay="200">
-            <span className="detail-icon"><FaMapMarkerAlt /></span>
+            <span className="detail-icon"><FaBriefcase /></span>
             <div className="detail-text">
-              <span className="detail-label">Address</span>
-              <span className="detail-value">Pakistan</span>
+              <span className="detail-label">Experience</span>
+              <span className="detail-value">2+ Years</span>
             </div>
           </div>
           <div className="detail-item" data-aos="fade-up" data-aos-delay="250">
             <span className="detail-icon"><FaEnvelope /></span>
             <div className="detail-text">
               <span className="detail-label">Email</span>
-              <span className="detail-value">waleediftikhar188@gmail.com</span>
+              <a href="mailto:waleediftikhar188@gmail.com" className="detail-value detail-link">waleediftikhar188@gmail.com</a>
             </div>
           </div>
           <div className="detail-item" data-aos="fade-up" data-aos-delay="300">
-            <span className="detail-icon"><FaPhoneAlt /></span>
+            <span className="detail-icon"><FaGithub /></span>
             <div className="detail-text">
-              <span className="detail-label">Phone</span>
-              <span className="detail-value">0303-0834088</span>
+              <span className="detail-label">GitHub</span>
+              <a
+                href="https://github.com/waleedjatt88"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="detail-value detail-link"
+              >
+                github.com/waleedjatt88
+              </a>
             </div>
           </div>
         </div>

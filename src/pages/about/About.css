@@ -83,13 +83,14 @@
   flex-shrink: 0;
   border-radius: 50%;
   background: #4ade80;
-  animation: pulseDot 2s infinite;
+  animation: pulseDot 1s infinite;
 }
 
 @keyframes pulseDot {
-  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+  0% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+  50% { opacity: 0.3; }
   70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+  100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
 
 .about-content-container {
@@ -212,6 +213,16 @@
   text-overflow: ellipsis;
 }
 
+a.detail-link {
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+a.detail-link:hover {
+  color: #f0ad4e;
+}
+
 @media screen and (max-width: 992px) {
   .about-section {
     flex-direction: column;
@@ -278,7 +289,6 @@
 @media (prefers-reduced-motion: reduce) {
   .about-image-frame,
   .about-image-glow,
-  .pulse-dot,
   .about-heading::after {
     animation: none;
   }
