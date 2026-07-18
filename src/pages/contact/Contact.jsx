@@ -2,8 +2,60 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import toast, { Toaster } from "react-hot-toast";
 import "./Contact.css";
-import profileImage from "../../assets/image4.png";
-import { FaMapMarkerAlt, FaPhone, FaPaperPlane, FaGlobe } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaPaperPlane,
+  FaReact,
+  FaNodeJs,
+  FaUser,
+  FaEnvelope,
+  FaHeading,
+  FaCommentDots,
+} from "react-icons/fa";
+import { SiMongodb, SiExpress } from "react-icons/si";
+
+const ArchitectureDiagram = () => (
+  <div className="arch-window">
+    <div className="arch-window-header">
+      <span className="arch-status-dot"></span>
+      <span className="arch-window-title">System Architecture — Live</span>
+    </div>
+
+    <div className="arch-diagram">
+      <div className="arch-node">
+        <div className="arch-icon-circle icon-client"><FaReact /></div>
+        <span className="arch-label">Client</span>
+        <span className="arch-sublabel">React</span>
+      </div>
+
+      <div className="arch-connector">
+        <span className="packet packet-req"></span>
+        <span className="packet packet-res"></span>
+      </div>
+
+      <div className="arch-node">
+        <div className="arch-icon-circle icon-server">
+          <FaNodeJs />
+          <SiExpress />
+        </div>
+        <span className="arch-label">Server</span>
+        <span className="arch-sublabel">Node + Express</span>
+      </div>
+
+      <div className="arch-connector">
+        <span className="packet packet-req" style={{ animationDelay: "0.7s" }}></span>
+        <span className="packet packet-res" style={{ animationDelay: "1.1s" }}></span>
+      </div>
+
+      <div className="arch-node">
+        <div className="arch-icon-circle icon-db"><SiMongodb /></div>
+        <span className="arch-label">Database</span>
+        <span className="arch-sublabel">MongoDB</span>
+      </div>
+    </div>
+  </div>
+);
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
@@ -103,9 +155,13 @@ const Contact = () => {
           </div>
         </div>
 
+        <h3 className="lets-connect-heading" data-aos="fade-up">
+          Let's <span>Connect</span>
+        </h3>
+
         <div className="contact-form-area">
-          <div className="contact-image">
-            <img src={profileImage} alt="image" loading="lazy" />
+          <div className="contact-visual" data-aos="fade-right">
+            <ArchitectureDiagram />
           </div>
 
           <form
@@ -113,16 +169,31 @@ const Contact = () => {
             data-aos="fade-left"
             onSubmit={handleSubmit}
           >
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <input type="text" placeholder="Subject" />
-            <textarea placeholder="Message" rows="6" required></textarea>
+            <h3 className="form-heading">Send a Message</h3>
+
+            <div className="input-group">
+              <FaUser className="input-icon" />
+              <input type="text" placeholder="Your Name" required />
+            </div>
+            <div className="input-group">
+              <FaEnvelope className="input-icon" />
+              <input type="email" placeholder="Your Email" required />
+            </div>
+            <div className="input-group">
+              <FaHeading className="input-icon" />
+              <input type="text" placeholder="Subject" />
+            </div>
+            <div className="input-group">
+              <FaCommentDots className="input-icon input-icon-textarea" />
+              <textarea placeholder="Message" rows="6" required></textarea>
+            </div>
+
             <button
               type="submit"
               className="send-message-btn"
               disabled={isSending}
             >
-              {isSending ? "SENDING..." : "SEND MESSAGE"}
+              <FaPaperPlane /> {isSending ? "SENDING..." : "SEND MESSAGE"}
             </button>
           </form>
         </div>
