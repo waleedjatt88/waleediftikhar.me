@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
-import { FaGithub, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope ,FaLinkedinIn} from 'react-icons/fa';
+import { FaGithub, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope, FaLinkedinIn, FaHeart } from 'react-icons/fa';
 
 import ParticlesBackground from '../ParticlesBackground';
 
@@ -24,7 +24,9 @@ const Footer = () => {
           <ul className="footer-links">
             <li><Link to="/#home">→ Home</Link></li>
             <li><Link to="/#about">→ About</Link></li>
+            <li><Link to="/#resume">→ Resume</Link></li>
             <li><Link to="/#services">→ Services</Link></li>
+            <li><Link to="/#skills">→ Skills</Link></li>
             <li><Link to="/#projects">→ Projects</Link></li>
             <li><Link to="/#contact">→ Contact</Link></li>
           </ul>
@@ -76,7 +78,10 @@ const Footer = () => {
 
       </div>
       <div className="copyright-text">
-        <p>© {new Date().getFullYear()} All rights reserved | This Portfolio is made by Waleed Iftikhar.</p>
+        <p>
+          © {new Date().getFullYear()} All rights reserved | Made with <FaHeart className="heart-icon" /> by{" "}
+          <span className="footer-name">Waleed Iftikhar</span>
+        </p>
       </div>
     </footer>
   );

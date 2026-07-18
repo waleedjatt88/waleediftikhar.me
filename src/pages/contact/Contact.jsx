@@ -15,45 +15,37 @@ import {
 } from "react-icons/fa";
 import { SiMongodb, SiExpress } from "react-icons/si";
 
-const ArchitectureDiagram = () => (
-  <div className="arch-window">
+const orbitIcons = [
+  { Icon: FaReact, className: "icon-react", ring: "ring-1" },
+  { Icon: FaNodeJs, className: "icon-node", ring: "ring-2" },
+  { Icon: SiExpress, className: "icon-express", ring: "ring-3" },
+  { Icon: SiMongodb, className: "icon-mongo", ring: "ring-4" },
+];
+
+const OrbitDiagram = () => (
+  <div className="orbit-window">
     <div className="arch-window-header">
       <span className="arch-status-dot"></span>
-      <span className="arch-window-title">System Architecture — Live</span>
+      <span className="arch-window-title">Tech Stack</span>
     </div>
 
-    <div className="arch-diagram">
-      <div className="arch-node">
-        <div className="arch-icon-circle icon-client"><FaReact /></div>
-        <span className="arch-label">Client</span>
-        <span className="arch-sublabel">React</span>
-      </div>
+    <div className="orbit-stage">
+      {[...Array(6)].map((_, i) => (
+        <span key={i} className={`spark spark-${i + 1}`}></span>
+      ))}
 
-      <div className="arch-connector">
-        <span className="packet packet-req"></span>
-        <span className="packet packet-res"></span>
-      </div>
+      <div className="orbit-hub">{"</>"}</div>
 
-      <div className="arch-node">
-        <div className="arch-icon-circle icon-server">
-          <FaNodeJs />
-          <SiExpress />
+      {orbitIcons.map(({ Icon, className, ring }) => (
+        <div className={`orbit-ring ${ring}`} key={ring}>
+          <span className={`orbit-icon ${className}`}>
+            <Icon />
+          </span>
         </div>
-        <span className="arch-label">Server</span>
-        <span className="arch-sublabel">Node + Express</span>
-      </div>
-
-      <div className="arch-connector">
-        <span className="packet packet-req" style={{ animationDelay: "0.7s" }}></span>
-        <span className="packet packet-res" style={{ animationDelay: "1.1s" }}></span>
-      </div>
-
-      <div className="arch-node">
-        <div className="arch-icon-circle icon-db"><SiMongodb /></div>
-        <span className="arch-label">Database</span>
-        <span className="arch-sublabel">MongoDB</span>
-      </div>
+      ))}
     </div>
+
+    <p className="orbit-caption">Powered by the MERN stack</p>
   </div>
 );
 
@@ -161,7 +153,7 @@ const Contact = () => {
 
         <div className="contact-form-area">
           <div className="contact-visual" data-aos="fade-right">
-            <ArchitectureDiagram />
+            <OrbitDiagram />
           </div>
 
           <form
