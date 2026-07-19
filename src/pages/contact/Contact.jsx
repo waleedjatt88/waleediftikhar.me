@@ -4,7 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import "./Contact.css";
 import {
   FaMapMarkerAlt,
-  FaPhone,
+  FaWhatsapp,
   FaPaperPlane,
   FaReact,
   FaNodeJs,
@@ -131,13 +131,20 @@ const Contact = () => {
             <h3 className="info-title">ADDRESS</h3>
             <p>Punjab, Pakistan</p>
           </div>
-          <div className="info-item" data-aos="fade-up" data-aos-delay="120">
+          <a
+            href="https://wa.me/923250063788"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="info-item"
+            data-aos="fade-up"
+            data-aos-delay="120"
+          >
             <div className="info-icon">
-              <FaPhone />
+              <FaWhatsapp />
             </div>
-            <h3 className="info-title">CONTACT NUMBER</h3>
-            <a href="tel:+923030834088" className="info-value-link">0303-0834088</a>
-          </div>
+            <h3 className="info-title">WHATSAPP</h3>
+            <span className="info-value-link">0325-0063788</span>
+          </a>
           <div className="info-item" data-aos="fade-up" data-aos-delay="240">
             <div className="info-icon">
               <FaPaperPlane />

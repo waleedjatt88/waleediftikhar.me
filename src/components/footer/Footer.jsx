@@ -52,7 +52,7 @@ const Footer = () => {
             </li>
             <li>
               <span><FaPhone /></span>
-              <p>0303-0834088</p>
+              <p>0325-0063788</p>
             </li>
             <li>
               <span><FaEnvelope /></span>
