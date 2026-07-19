@@ -6,48 +6,112 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
   FaPaperPlane,
-  FaReact,
-  FaNodeJs,
   FaUser,
   FaEnvelope,
   FaHeading,
   FaCommentDots,
+  FaReact,
+  FaNodeJs,
 } from "react-icons/fa";
 import { SiMongodb, SiExpress } from "react-icons/si";
 
-const orbitIcons = [
-  { Icon: FaReact, className: "icon-react", ring: "ring-1" },
-  { Icon: FaNodeJs, className: "icon-node", ring: "ring-2" },
-  { Icon: SiExpress, className: "icon-express", ring: "ring-3" },
-  { Icon: SiMongodb, className: "icon-mongo", ring: "ring-4" },
+const cornerIcons = [
+  { Icon: SiMongodb, color: "#47a248", position: "corner-tl" },
+  { Icon: SiExpress, color: "#ffffff", position: "corner-tr" },
+  { Icon: FaNodeJs, color: "#83cd29", position: "corner-bl" },
+  { Icon: FaReact, color: "#61dafb", position: "corner-br" },
 ];
 
-const OrbitDiagram = () => (
-  <div className="orbit-window">
-    <div className="arch-window-header">
-      <span className="arch-status-dot"></span>
-      <span className="arch-window-title">Tech Stack</span>
-    </div>
+const KW = "#c586c0";
+const PROP = "#9cdcfe";
+const STR = "#ce9178";
+const BOOL = "#569cd6";
+const PLAIN = "#d4d4d4";
 
-    <div className="orbit-stage">
-      {[...Array(6)].map((_, i) => (
-        <span key={i} className={`spark spark-${i + 1}`}></span>
+const codeLines = [
+  { raw: "const developer = {", tokens: [{ t: "const", c: KW }, { t: " developer = {", c: PLAIN }] },
+  { raw: "  name: 'Waleed Iftikhar',", tokens: [{ t: "  name", c: PROP }, { t: ": ", c: PLAIN }, { t: "'Waleed Iftikhar'", c: STR }, { t: ",", c: PLAIN }] },
+  { raw: "  role: 'MERN Stack Developer',", tokens: [{ t: "  role", c: PROP }, { t: ": ", c: PLAIN }, { t: "'MERN Stack Developer'", c: STR }, { t: ",", c: PLAIN }] },
+  { raw: "  location: 'Punjab, Pakistan',", tokens: [{ t: "  location", c: PROP }, { t: ": ", c: PLAIN }, { t: "'Punjab, Pakistan'", c: STR }, { t: ",", c: PLAIN }] },
+  { raw: "  stack: ['React', 'Node.js', 'Express', 'MongoDB'],", tokens: [{ t: "  stack", c: PROP }, { t: ": [", c: PLAIN }, { t: "'React', ", c: STR }, { t: "'Node.js', ", c: STR }, { t: "'Express', ", c: STR }, { t: "'MongoDB'", c: STR }, { t: "],", c: PLAIN }] },
+  { raw: "  available: true,", tokens: [{ t: "  available", c: PROP }, { t: ": ", c: PLAIN }, { t: "true", c: BOOL }, { t: ",", c: PLAIN }] },
+  { raw: "};", tokens: [{ t: "};", c: PLAIN }] },
+];
+
+const useTypewriter = (script, { typingSpeed = 32, lineDelay = 320, loopDelay = 2600 } = {}) => {
+  const [lineIdx, setLineIdx] = useState(0);
+  const [current, setCurrent] = useState("");
+
+  useEffect(() => {
+    if (lineIdx >= script.length) {
+      const timer = setTimeout(() => {
+        setCurrent("");
+        setLineIdx(0);
+      }, loopDelay);
+      return () => clearTimeout(timer);
+    }
+
+    const target = script[lineIdx].raw;
+
+    if (current.length < target.length) {
+      const timer = setTimeout(() => {
+        setCurrent(target.slice(0, current.length + 1));
+      }, typingSpeed);
+      return () => clearTimeout(timer);
+    }
+
+    const timer = setTimeout(() => {
+      setCurrent("");
+      setLineIdx((i) => i + 1);
+    }, lineDelay);
+    return () => clearTimeout(timer);
+  }, [current, lineIdx, script]);
+
+  return { lineIdx, current };
+};
+
+const TerminalCard = () => {
+  const { lineIdx, current } = useTypewriter(codeLines);
+
+  return (
+    <div className="terminal-window">
+      {cornerIcons.map(({ Icon, color, position }) => (
+        <span className={`corner-icon ${position}`} key={position} style={{ color }}>
+          <Icon />
+        </span>
       ))}
 
-      <div className="orbit-hub">{"</>"}</div>
+      <div className="terminal-header">
+        <span className="terminal-dot dot-red"></span>
+        <span className="terminal-dot dot-yellow"></span>
+        <span className="terminal-dot dot-green"></span>
+        <span className="terminal-title">developer.js</span>
+      </div>
 
-      {orbitIcons.map(({ Icon, className, ring }) => (
-        <div className={`orbit-ring ${ring}`} key={ring}>
-          <span className={`orbit-icon ${className}`}>
-            <Icon />
-          </span>
+      <div className="code-body">
+        <div className="code-block">
+          {codeLines.map((line, i) => (
+            <div className="code-line" key={i}>
+              <span className="code-line-number">{i + 1}</span>
+              <span className="code-line-content">
+                {i < lineIdx &&
+                  line.tokens.map((tok, j) => (
+                    <span key={j} style={{ color: tok.c }}>{tok.t}</span>
+                  ))}
+                {i === lineIdx && (
+                  <>
+                    <span style={{ color: "#f0ad4e" }}>{current}</span>
+                    <span className="terminal-cursor">▌</span>
+                  </>
+                )}
+              </span>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
-
-    <p className="orbit-caption">Powered by the MERN stack</p>
-  </div>
-);
+  );
+};
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
@@ -160,7 +224,7 @@ const Contact = () => {
 
         <div className="contact-form-area">
           <div className="contact-visual" data-aos="fade-right">
-            <OrbitDiagram />
+            <TerminalCard />
           </div>
 
           <form
