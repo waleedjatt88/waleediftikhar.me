@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import AOS from 'aos';
 import './Services.css';
-import { FaDatabase, FaNodeJs, FaMobileAlt, FaCode, FaUsers } from "react-icons/fa";
+import { FaDatabase, FaMobileAlt, FaLaptopCode, FaPlug, FaTools } from "react-icons/fa";
 import { SiInstructure } from "react-icons/si";
 
 const servicesData = [
   { icon: <FaMobileAlt />, title: 'RESPONSIVE DESIGN' },
   { icon: <FaDatabase />, title: 'DATABASE MANAGEMENT' },
-  { icon: <FaCode />, title: 'WEB DEVELOPER' },
+  { icon: <FaLaptopCode />, title: 'FULL-STACK WEB DEVELOPMENT' },
   { icon: <SiInstructure />, title: 'CODEBASE STRUCTURING' },
-  { icon: <FaUsers />, title: 'TEAM COLLABORATOR' },
-  { icon: <FaNodeJs />, title: 'Node.js' },
+  { icon: <FaTools />, title: 'WEBSITE MAINTENANCE & SUPPORT' },
+  { icon: <FaPlug />, title: 'API DEVELOPMENT & INTEGRATION' },
 ];
 
 const ServiceCard = ({ service, index }) => {
