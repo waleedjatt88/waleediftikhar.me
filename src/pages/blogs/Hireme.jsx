@@ -1,9 +1,14 @@
 import React from 'react';
-import './Hireme.css'; 
+import './Hireme.css';
 import ctaVideo from '../../assets/bg_1.mp4';
 import ParticlesBackground from '../../components/ParticlesBackground';
 
 const HireMe = () => {
+  const scrollToContact = (e) => {
+    e.preventDefault();
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <>
       <section className="stats-section">
@@ -40,7 +45,7 @@ const HireMe = () => {
         <div className="container cta-content">
           <h2>I'm <span>Available</span> for freelancing</h2>
           <p>"Open to exciting freelance opportunities—let’s bring your ideas to life with clean, creative, and responsive web design"!</p>
-          <a href="#contact" className="cta-button">HIRE ME</a>
+          <a href="#contact" className="cta-button" onClick={scrollToContact}>HIRE ME</a>
         </div>
       </section>
     </>
