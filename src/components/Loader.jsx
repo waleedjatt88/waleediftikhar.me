@@ -1,9 +1,9 @@
 import React from 'react';
 import './Loader.css';
 
-const Loader = () => {
+const Loader = ({ fadeOut }) => {
   return (
-    <div className="loader-container">
+    <div className={`loader-container ${fadeOut ? 'fade-out' : ''}`}>
       <div className="loader-content">
         <div className="spinner">
           <div className="double-bounce1"></div>

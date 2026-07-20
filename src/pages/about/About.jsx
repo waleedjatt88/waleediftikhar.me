@@ -1,11 +1,52 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
+import { useInView } from 'react-intersection-observer';
 import './About.css';
 import { FaUser, FaBriefcase, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 import profileImage from '../../assets/image1.png';
 
+const statsData = [
+  { label: 'Projects Completed', value: 50, suffix: '+' },
+  { label: 'Years Experience', value: 2, suffix: '+' },
+  { label: 'Technologies', value: 10, suffix: '+' },
+];
+
+const StatItem = ({ stat, isVisible, delay }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 1500;
+    const stepTime = Math.max(Math.floor(duration / stat.value), 30);
+    let start = 0;
+
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start >= stat.value) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [isVisible, stat.value]);
+
+  return (
+    <div className="stat-item" data-aos="fade-up" data-aos-delay={delay}>
+      <span className="stat-number">{count}{stat.suffix}</span>
+      <span className="stat-label">{stat.label}</span>
+    </div>
+  );
+};
+
 const About = () => {
+  const { ref: statsRef, inView: statsInView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -83,6 +124,17 @@ const About = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="about-stats" ref={statsRef}>
+          {statsData.map((stat, index) => (
+            <StatItem
+              key={stat.label}
+              stat={stat}
+              isVisible={statsInView}
+              delay={index * 120}
+            />
+          ))}
         </div>
       </div>
     </section>
