@@ -271,8 +271,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #25d366;
-  color: #06210f;
+  background-color: #f0ad4e;
+  color: #000000;
   padding: 14px 35px;
   border-radius: 30px;
   text-decoration: none;
@@ -287,10 +287,10 @@
 }
 
 .whatsapp-btn-resume:hover {
-  background-color: #1ebe5c;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(240, 173, 78, 0.6);
 }
 
 @media screen and (max-width: 992px) {
