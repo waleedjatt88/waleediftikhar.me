@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const sectionIds = ['home', 'about', 'resume', 'services', 'skills', 'projects', 'contact'];
+const sectionIds = ['home', 'about', 'resume', 'services', 'skills', 'contact'];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,11 +68,6 @@ const Navbar = () => {
           <li className="nav-item">
             <NavLink to="/#skills" className={linkClass('skills')} onClick={closeMobileMenu}>
               Skills
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/#projects" className={linkClass('projects')} onClick={closeMobileMenu}>
-              Projects
             </NavLink>
           </li>
           <li className="nav-item">

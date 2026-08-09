@@ -13,7 +13,6 @@ import About from "./pages/about/About";
 import Resume from "./pages/resume/Resume";
 import Services from "./pages/services/Services";
 import Skills from "./pages/skills/Skills";
-import Projects from "./pages/projects/Projects";
 import HireMe from "./pages/blogs/Hireme";
 import Contact from "./pages/contact/Contact";
 
@@ -50,7 +49,6 @@ const App = () => {
         <Resume />
         <Services />
         <Skills />
-        <Projects />
         <HireMe />
         <Contact />
       </main>

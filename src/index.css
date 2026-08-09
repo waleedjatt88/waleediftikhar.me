@@ -9,6 +9,12 @@ html, body {
   scroll-behavior: smooth;
     width: 100%;
   overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 @font-face {
