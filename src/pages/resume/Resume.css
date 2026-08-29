@@ -4,7 +4,7 @@
   padding: 80px 8%;
   font-family: 'Poppins', sans-serif;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: center;
 }
 
