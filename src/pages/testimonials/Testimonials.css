@@ -1,0 +1,523 @@
+.testimonials-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 90px 8%;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.background-text-testimonials {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10vw;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.04);
+  z-index: 0;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: 4px;
+}
+
+.section-header-testimonials {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.global-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(240, 173, 78, 0.12);
+  border: 1px solid rgba(240, 173, 78, 0.35);
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #f0ad4e;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.badge-globe-icon {
+  font-size: 0.85rem;
+}
+
+.section-header-testimonials h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+#testimonialspan {
+  color: #f0ad4e;
+  font-weight: 700;
+}
+
+.section-header-testimonials p {
+  font-size: 1rem;
+  color: #cccccc;
+  max-width: 580px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* Two-column layout: Globe + Testimonial Glass Card */
+.testimonials-interactive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+/* Globe Column */
+.globe-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.globe-card-wrapper {
+  width: 100%;
+  height: 440px;
+  background: radial-gradient(circle at center, rgba(240, 173, 78, 0.05) 0%, rgba(255, 255, 255, 0.01) 70%, transparent 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating 2D Pins & Review Badges Overlay on Globe */
+.globe-overlay-pins-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.globe-floating-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.2s ease-out;
+}
+
+.globe-floating-pin.current-active,
+.globe-floating-pin.expanded {
+  z-index: 20;
+}
+
+.pin-anchor-dot {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.globe-floating-pin:hover .pin-anchor-dot,
+.globe-floating-pin.current-active .pin-anchor-dot {
+  transform: scale(1.25);
+}
+
+.pin-mini-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f0ad4e;
+  box-shadow: 0 0 10px rgba(240, 173, 78, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+.pin-pulse-wave {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(240, 173, 78, 0.6);
+  animation: pinPulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes pinPulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Floating Glass Mini Card Attached to the Pin */
+.pin-floating-card {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 210px;
+  background: rgba(10, 12, 20, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(240, 173, 78, 0.45);
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(240, 173, 78, 0.25);
+  pointer-events: none;
+  animation: pinPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  z-index: 30;
+}
+
+.pin-floating-card.position-below {
+  bottom: auto;
+  top: calc(100% + 10px);
+  animation: pinPopBelow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pinPop {
+  0% { opacity: 0; transform: translateX(-50%) translateY(8px) scale(0.9); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+@keyframes pinPopBelow {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-8px) scale(0.9); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+.pin-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.pin-flag {
+  font-size: 0.9rem;
+}
+
+.pin-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.pin-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.pin-star-icon {
+  color: #f0ad4e;
+  font-size: 0.65rem;
+}
+
+.pin-snippet {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: #dcdcdc;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.pin-company-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #f0ad4e;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.globe-hint {
+  position: absolute;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #888888;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Testimonial Card Column */
+.testimonial-card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testimonial-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  padding: 38px 34px;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-glass-card:hover {
+  border-color: rgba(240, 173, 78, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(240, 173, 78, 0.1);
+}
+
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.quote-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(240, 173, 78, 0.12);
+  color: #f0ad4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.stars-row {
+  display: flex;
+  gap: 4px;
+}
+
+.gold-star {
+  color: #f0ad4e;
+  font-size: 1.05rem;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+  min-height: 90px;
+}
+
+.client-info-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 26px;
+}
+
+.client-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #f0ad4e;
+  box-shadow: 0 0 15px rgba(240, 173, 78, 0.45);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111111;
+}
+
+.client-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.client-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country-flag {
+  font-size: 1.1rem;
+}
+
+.client-role {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+  margin-bottom: 4px;
+}
+
+.client-company {
+  color: #f0ad4e;
+  font-weight: 600;
+}
+
+.client-project {
+  font-size: 0.78rem;
+  color: #888888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verified-icon {
+  color: #4ade80;
+  font-size: 0.8rem;
+}
+
+.card-controls-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination-pills {
+  display: flex;
+  gap: 8px;
+}
+
+.pill-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pill-dot.active {
+  width: 28px;
+  background: #f0ad4e;
+  box-shadow: 0 0 10px rgba(240, 173, 78, 0.6);
+}
+
+.nav-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-arrow-btn:hover {
+  background: #f0ad4e;
+  border-color: #f0ad4e;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(240, 173, 78, 0.4);
+}
+
+.testimonial-stats-row {
+  display: flex;
+  gap: 14px;
+}
+
+.t-stat-pill {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.t-stat-icon {
+  color: #f0ad4e;
+  font-size: 0.95rem;
+}
+
+@media screen and (max-width: 992px) {
+  .testimonials-interactive-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .globe-card-wrapper {
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .testimonials-section {
+    padding: 70px 5%;
+  }
+
+  .section-header-testimonials h2 {
+    font-size: 2.2rem;
+  }
+
+  .background-text-testimonials {
+    font-size: 15vw;
+  }
+
+  .testimonial-glass-card {
+    padding: 26px 20px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-stats-row {
+    flex-direction: column;
+  }
+}

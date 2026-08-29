@@ -11,9 +11,10 @@ import Loader from "./components/Loader.jsx";
 import Hero from "./pages/home/Hero";
 import About from "./pages/about/About";
 import Resume from "./pages/resume/Resume";
+import Testimonials from "./pages/testimonials/Testimonials";
 import Services from "./pages/services/Services";
-import Skills from "./pages/skills/Skills";
 import HyperspeedSection from "./pages/hyperspeed/HyperspeedSection";
+import Skills from "./pages/skills/Skills";
 import HireMe from "./pages/blogs/Hireme";
 import Contact from "./pages/contact/Contact";
 
@@ -48,6 +49,7 @@ const App = () => {
         <Hero />
         <About />
         <Resume />
+        <Testimonials />
         <Services />
         <HyperspeedSection />
         <Skills />
