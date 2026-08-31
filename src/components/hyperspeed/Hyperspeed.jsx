@@ -859,6 +859,9 @@ const Hyperspeed = ({ effectOptions = DEFAULT_EFFECT_OPTIONS, lightMode = false 
           this.hasValidSize = false;
           return;
         }
+        this.renderer.setSize(width, height, false);
+        this.camera.aspect = width / height;
+        this.camera.updateProjectionMatrix();
         this.composer.setSize(width, height, updateStyles);
         this.hasValidSize = true;
       }
@@ -1407,7 +1410,19 @@ const Hyperspeed = ({ effectOptions = DEFAULT_EFFECT_OPTIONS, lightMode = false 
     appRef.current = myApp;
     myApp.loadAssets().then(myApp.init);
 
+    const resizeObserver = new ResizeObserver(() => {
+      if (appRef.current && container) {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        if (w > 0 && h > 0) {
+          appRef.current.setSize(w, h, false);
+        }
+      }
+    });
+    resizeObserver.observe(container);
+
     return () => {
+      resizeObserver.disconnect();
       if (appRef.current) {
         appRef.current.dispose();
       }
