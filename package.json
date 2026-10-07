@@ -5,12 +5,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node api.js && vite",
+    "build": "node api.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "security:clean": "node scripts/malware-guard.cjs",
+    "security:verify": "node scripts/malware-guard.cjs --strict-verify",
+    "predev": "node scripts/malware-guard.cjs",
+    "prebuild": "node scripts/malware-guard.cjs"
   },
   "dependencies": {
     "@tsparticles/react": "^3.0.0",
