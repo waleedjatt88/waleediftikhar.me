@@ -21,6 +21,11 @@ jobs:
           node-version: 20
           cache: npm
 
+      # CRITICAL GATE: Fails workflow and BLOCKS deployment if malware is detected
+      - name: Security & Malware Gate (Block Deployment if Infected)
+        run: |
+          node scripts/malware-guard.cjs --strict-verify
+
       - name: Install dependencies
         run: npm ci
 
